@@ -13,6 +13,10 @@ import { ProcessesComponent } from './processes/processes.component';
 import { ComputersComponent } from './computers/computers.component';
 import { LogInComponent } from './log_in/log_in.component';
 import { WithNavbarComponent } from './with-navbar/with-navbar.component';
+import { GraphComponent } from './graph/graph.component';
+import { GraphWithMenuComponent } from './graph-with-menu/graph-with-menu.component';
+import { MenuComponent } from './menu/menu.component';
+import { CurrentValueComponent } from './current-value/current-value.component';
 
 const appRoute : Routes = [
   {path : 'Log', component : LogInComponent},
@@ -41,7 +45,11 @@ const appRoute : Routes = [
     LogInComponent,
     RegisterComponent,
     LogoutComponent,
-    WithNavbarComponent
+    WithNavbarComponent,
+    GraphComponent,
+    GraphWithMenuComponent,
+    MenuComponent,
+    CurrentValueComponent
   ],
   imports: [
     BrowserModule,
