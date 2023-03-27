@@ -1,5 +1,7 @@
+import { MenuComponent } from './../menu/menu.component';
 import { LiveComponent } from './../live/live.component';
-import { Component } from '@angular/core';
+import { Component, Input, ViewContainerRef, ViewChild, OnInit, Type } from '@angular/core';
+import { GraphAdderComponent } from '../graph-adder/graph-adder.component';
 
 @Component({
   selector: 'app-graph-with-menu',
@@ -8,16 +10,29 @@ import { Component } from '@angular/core';
 })
 export class GraphWithMenuComponent {
   public id :number;
-  public parent :LiveComponent;
+  public parent :GraphAdderComponent;
+  public component : Type<any>;
 
   public SetId(id : number)
   {
     this.id = id;
     console.log(id);
   }
-  constructor() 
+
+  @ViewChild('menu', {read: ViewContainerRef}) target: ViewContainerRef;
+
+
+  ngAfterViewInit()
   { 
+    this.loadComponent();
   }
+
+
+ loadComponent() {
+    console.log('Here');
+    const componentRef = this.target.createComponent<any>(this.component);
+  }
+
   public delete_me()
   {
     this.parent.remove(this.id);

@@ -17,6 +17,8 @@ import { GraphComponent } from './graph/graph.component';
 import { GraphWithMenuComponent } from './graph-with-menu/graph-with-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { CurrentValueComponent } from './current-value/current-value.component';
+import { GraphAdderComponent } from './graph-adder/graph-adder.component';
+import { MenuWithDateComponent } from './menu-with-date/menu-with-date.component';
 
 const appRoute : Routes = [
   {path : 'Log', component : LogInComponent},
@@ -49,7 +51,9 @@ const appRoute : Routes = [
     GraphComponent,
     GraphWithMenuComponent,
     MenuComponent,
-    CurrentValueComponent
+    CurrentValueComponent,
+    GraphAdderComponent,
+    MenuWithDateComponent
   ],
   imports: [
     BrowserModule,
