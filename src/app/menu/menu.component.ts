@@ -1,3 +1,4 @@
+import { IParent } from './../processes/IParent';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  public parent : IParent;
 
+  Click(){
+    this.parent.Notify("this");
+  }
 }

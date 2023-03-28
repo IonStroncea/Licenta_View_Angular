@@ -1,3 +1,4 @@
+import { IParent } from './../processes/IParent';
 import { MenuComponent } from './../menu/menu.component';
 import { LiveComponent } from './../live/live.component';
 import { Component, Input, ViewContainerRef, ViewChild, OnInit, Type } from '@angular/core';
@@ -8,7 +9,10 @@ import { GraphAdderComponent } from '../graph-adder/graph-adder.component';
   templateUrl: './graph-with-menu.component.html',
   styleUrls: ['./graph-with-menu.component.css']
 })
-export class GraphWithMenuComponent {
+export class GraphWithMenuComponent implements IParent {
+  Notify(input: any) {
+    console.log('clicked');
+  }
   public id :number;
   public parent :GraphAdderComponent;
   public component : Type<any>;
@@ -31,6 +35,7 @@ export class GraphWithMenuComponent {
  loadComponent() {
     console.log('Here');
     const componentRef = this.target.createComponent<any>(this.component);
+    componentRef.instance.parent = this;
   }
 
   public delete_me()

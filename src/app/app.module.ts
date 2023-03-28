@@ -19,6 +19,9 @@ import { MenuComponent } from './menu/menu.component';
 import { CurrentValueComponent } from './current-value/current-value.component';
 import { GraphAdderComponent } from './graph-adder/graph-adder.component';
 import { MenuWithDateComponent } from './menu-with-date/menu-with-date.component';
+import { ComputerInfoComponent } from './computer-info/computer-info.component';
+import { GetMyComputersServiceService } from './get-my-computers-service.service';
+import { ProcessesServiceService } from './processes-service.service';
 
 const appRoute : Routes = [
   {path : 'Log', component : LogInComponent},
@@ -53,13 +56,14 @@ const appRoute : Routes = [
     MenuComponent,
     CurrentValueComponent,
     GraphAdderComponent,
-    MenuWithDateComponent
+    MenuWithDateComponent,
+    ComputerInfoComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoute) 
   ],
-  providers: [],
+  providers: [GetMyComputersServiceService, ProcessesServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
